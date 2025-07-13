@@ -25,7 +25,7 @@ Provide a concise and accurate answer to the question provided below, using ONLY
 """Cache settings"""
 # The filepath to the existing cache to be loaded, if any.
 # If None, a new cache is created that can later be saved via `save cache`, unless caching is disabled (see below).
-CACHE_FILEPATH: str | None = os.path.join(".", "data", "cache.pkl")
+CACHE_FILEPATH: str | None = None
 # The maximum size of the cache. Disables caching if set to 0.
 CACHE_MAX_SIZE: float = 100
 # The number of seconds until cache entries expire, or never if set to None. Disables caching if set to 0.
@@ -69,26 +69,27 @@ DISCORD_COMMAND_DOCUMENTATION: dict[str, tuple[Literal["general", "trusted", "ow
 """Groups settings"""
 # The filepath to the existing list of blocked Discord IDs to be loaded, if desired.
 # If None, a new list is created that can later be saved via `save blocked`.
-GROUPS_BLOCKED_IDS_FILEPATH: str | None = os.path.join(".", "data", "blockedIDs.txt")
+GROUPS_BLOCKED_IDS_FILEPATH: str | None = None
 # The filepath to the existing list of Discord IDs who have permitted their messages to be stored without requiring individual requests each time, if desired.
 # If None, a new list is created that can later be saved via `save permitting`. 
-GROUPS_PERMITTING_IDS_FILEPATH: str | None = os.path.join(".", "data", "permittingIDs.txt")
+GROUPS_PERMITTING_IDS_FILEPATH: str | None = None
 # The filepath to the existing list of trusted Discord IDs to be loaded, if desired.
 # If None, a new list is created that can later be saved via `save trusted`.
-GROUPS_TRUSTED_IDS_FILEPATH: str | None = os.path.join(".", "data", "trustedIDs.txt")
+GROUPS_TRUSTED_IDS_FILEPATH: str | None = None
 
 """Requests settings"""
 # The filepath to the existing list of vectorstore addition requests to be loaded, if desired.
 # If None, a new list is created that can later be saved via `save trusted`.
-REQUESTS_VECTORSTORE_FILEPATH: str | None = os.path.join(".", "data", "vectorstoreRequests.pkl")
+# REQUESTS_VECTORSTORE_FILEPATH: str | None = os.path.join(".", "data", "vectorstoreRequests.pkl")
+REQUESTS_VECTORSTORE_FILEPATH: str | None = None
 # The filepath to the existing list of permitting addition requests to be loaded, if desired.
 # If None, a new list is created that can later be saved via `save trusted`.
-REQUESTS_PERMITTING_FILEPATH: str | None = os.path.join(".", "data", "permittingRequests.pkl")
+REQUESTS_PERMITTING_FILEPATH: str | None = None
 
 """Vectorstore settings"""
 # The filepath to the existing vectorstore to be loaded.
 # If None, a new vectorstore is created that can later be saved via `save vectorstore`.
-VECTORSTORE_FILEPATH: str | None = os.path.join(".", "data", "index.faiss")
+VECTORSTORE_FILEPATH: str | None = None
 # VECTORSTORE_FILEPATH: str | None = None
 # The minimum embedding distance that stored texts must have to be considered.
 # Must be None or in the range [0, 1], with 0/None imposing no constraints, and 1 disabling anything but character-for-character matches.

@@ -1,3 +1,4 @@
+cachetools
 discord.py
 faiss-cpu
 fastembed

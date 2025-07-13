@@ -15,7 +15,7 @@ This bot contains
 <!-- - the theoretical ability to return messages in other languages, should anyone be [willing to add translations](src/translations.py). -->
 
 ## Installation and Setup
-1. Visit [Discord's Developer portal](https://discord.com/developers/applications) and create a bot. When invited to servers, it must have `Send message`, `Read message history`, and `Manage reactions` permissions. Copy and save its bot token.
+1. Visit [Discord's Developer Portal](https://discord.com/developers/applications), create a bot, and enable Message Content Intent for it. When invited to servers, the bot must have `Send message`, `Read message history`, and `Manage reactions` permissions. Copy and save its bot token.
 2. *Optional: Visit [Groq](https://console.groq.com/keys) and create an API key.*
 3. Install [Python 3.10 or above](https://www.python.org/downloads) alongside its pip package manager.
 4. Clone or download+extract this repository.
@@ -40,11 +40,11 @@ This bot is primarily interacted with via slash commands or pinging it.
 - `/contains [Blocked Group|Permitting Group|Trusted Group] [user ID (optional)]`: Returns whether the provided group contains the command executor, or the provided user if one is specified.
 ### Trusted commands
 - `/add [Blocked Group|Trusted Group|Vectorstore] [user ID/message URL]`: Directly adds the provided user ID, to the provided group, or *requests to* add the linked message to the provided vectorstore.
-- `clear [All|Blocked Group|Cache|Permitting Group|Permitting Requests|Trusted Group|Vectorstore Requests]`: Clears the provided group/cache/requests list/vectorstore, respectively.
+- `/clear [All|Blocked Group|Cache|Permitting Group|Permitting Requests|Trusted Group|Vectorstore Requests]`: Clears the provided group/cache/requests list/vectorstore, respectively.
 - `/remove [Blocked Group|Trusted Group] [user ID]`: Removes the provided user from the provided group.
 ### Owner commands
-- `save [All|Blocked Group|Cache|Permitting Group|Permitting Requests|Trusted Group|Vectorstore|Vectorstore Requests] [filepath (optional)]`: Saves the provided group/cache/requests list/vectorstore to their last-used filepath, or the provided filepath if specified.
-- `load [All|Blocked Group|Cache|Permitting Group|Permitting Requests|Trusted Group|Vectorstore|Vectorstore Requests] [filepath (optional)]`: Loads the provided group/cache/requests list/vectorstore from their last-used filepath, or the provided filepath if specified.
+- `/save [All|Blocked Group|Cache|Permitting Group|Permitting Requests|Trusted Group|Vectorstore|Vectorstore Requests] [filepath (optional)]`: Saves the provided group/cache/requests list/vectorstore to their last-used filepath, or the provided filepath if specified.
+- `/load [All|Blocked Group|Cache|Permitting Group|Permitting Requests|Trusted Group|Vectorstore|Vectorstore Requests] [filepath (optional)]`: Loads the provided group/cache/requests list/vectorstore from their last-used filepath, or the provided filepath if specified.
 
 ### Reactions
 For messages sent after the bot is added, trusted users can request to add an existing message to the vectorstore by adding the `DISCORD_REQUEST_ADDITION_EMOJI` reaction specified in [Settings.py](Settings.py). This requires the original author's approval unless the requester *is* the original author, or the author has voluntarily added himself/herself to the permitting group.
